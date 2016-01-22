@@ -7,6 +7,8 @@
 import math
 import operator
 
+up_to = 20
+
 def prime_factors(n):
 	factors = []
 	d = 2
@@ -29,14 +31,15 @@ def primes(up_to, factorslist):
 	return factorslist
 
 # 1-20, but 1 is not prime and 20 is an even number so not prime. So 2 - 19
-list1 = primes(20, range(2,20))
+list1 = primes(up_to, range(2,up_to))
 
-for x in range(2, 21):
+for x in range(2, up_to + 1):
 	if x not in list1:
 		temp = prime_factors(x)
 		for y in temp:
 			while temp.count(y) > list1.count(y):
 				list1.append(y)
 
+# Product of all the values in the list
 list1 = reduce(operator.mul, list1, 1)
 print list1
