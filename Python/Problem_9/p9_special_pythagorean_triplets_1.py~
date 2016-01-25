@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 def pyTriplet(m, n, sum):
+	# Using Euclid's Formula
     a = (n*n) - (m*m)
     b = 2*n*m
     c = (n*n) + (m*m)
